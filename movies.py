@@ -9,13 +9,20 @@ class Movies:
                     movie_name = line.rstrip()
                 if row_idx%3 == 1:
                     movie_cast = line.rstrip().split(',')
-                if row_idx%3 == 2:
                     self._movies.append(
                         {
                             'name': movie_name,
                             'cast': movie_cast
                         }
                     )
+                    
+                '''if row_idx%3 == 2 or row_idx == 299:
+                    self._movies.append(
+                        {
+                            'name': movie_name,
+                            'cast': movie_cast
+                        }
+                    )'''
                 row_idx += 1
 
 
