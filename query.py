@@ -13,9 +13,29 @@ while x == 1:
         for i in movies._movies:
             print(i['name'])
     elif choice == "sn":
-        n = input("Enter a search term: ").lower()
+        n = input("   Enter a search term: ").lower()
         for i in movies._movies:
             if n in i['name'].lower():
                 print(i['name'])
+    elif choice == "sc":
+        n = input("   Enter a search term: ").lower()
+        namelist = []
+
+        for i in movies._movies:
+            castlist = i['cast']
+            m = 0
+            flag = 0
+            while m < len(castlist):
+                if n in castlist[m].lower():
+                    name = castlist[m]
+                    if flag == 0:
+                        print(i['name'])
+                        flag = 1
+                    if name not in namelist:
+                        namelist.append(castlist[m])
+                m = m+1
+            if flag == 1:
+                print(namelist)
+                
     else:
         print("Invalid input. Try again.")
