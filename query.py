@@ -27,10 +27,12 @@ while x == 1:
             flag = 0
             while m < len(castlist):
                 if n in castlist[m].lower():
+                    name = castlist[m]
                     if flag == 0:
                         print(i['name'])
                         flag = 1
-                    namelist.append(castlist[m])
+                    if name not in namelist:
+                        namelist.append(castlist[m])
                 m = m+1
             if flag == 1:
                 print(namelist)
