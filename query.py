@@ -12,5 +12,10 @@ while x == 1:
     elif choice == "list":
         for i in movies._movies:
             print(i['name'])
+    elif choice == "sn":
+        n = input("Enter a search term: ").lower()
+        for i in movies._movies:
+            if n in i['name'].lower():
+                print(i['name'])
     else:
         print("Invalid input. Try again.")
